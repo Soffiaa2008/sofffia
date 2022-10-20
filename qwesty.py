@@ -5,6 +5,7 @@ exp=0
 food_surply=50
 energy=50
 
+notes=[]
 
 
 def henting():
@@ -30,6 +31,13 @@ def food():
     print("me->я наелся:)")
 
 
+def writeNote():
+    global exp 
+    exp+=10
+    print("что будем писать?")
+    ans=input("ответ->")
+    notes.append(ans)
+    print("я: записал!")
 
 
 
@@ -38,6 +46,7 @@ while True:
     print("1.охотиться")
     print("2.спать ")
     print("3.поесть")
+    print("4.написать заметку ")
 
     activion=input("напиши номер действия->")
     if activion=="1":
@@ -46,9 +55,9 @@ while True:
         relax()
     elif activion=="3":
         food()
-
-
-
+    elif activion=="4":
+        writeNote()
+    
     print("\n\n")
 
     print("здоровье->"+str(health))
