@@ -39,6 +39,11 @@ def writeNote():
     notes.append(ans)
     print("я: записал!")
 
+def readNotes():
+    print
+    print("записи-")
+    for n in notes:
+        print(n)
 
 
 while True:
@@ -47,6 +52,7 @@ while True:
     print("2.спать ")
     print("3.поесть")
     print("4.написать заметку ")
+    print("5.прочитать заметку")
 
     activion=input("напиши номер действия->")
     if activion=="1":
@@ -56,7 +62,10 @@ while True:
     elif activion=="3":
         food()
     elif activion=="4":
-        writeNote()
+        writeNote()   
+    elif activion=="5":
+        readNotes()
+    
     
     print("\n\n")
 
