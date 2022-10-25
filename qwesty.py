@@ -1,4 +1,4 @@
-
+from random import randint
 
 health=100
 exp=0
@@ -45,6 +45,19 @@ def readNotes():
     for n in notes:
         print(n)
 
+def stroll():
+    global exp,energy,food_surply,health
+    r=randint(1,5)
+    exp+=10
+    if r==1:
+        print("я-> на меня напали разбойники :(")
+        energy-=30
+        food_surply-=20
+        health-=20
+    else:
+        print("я->я погулял отлично")
+        energy-=20
+        health+=15
 
 while True:
     print("------список действий------")
@@ -53,6 +66,7 @@ while True:
     print("3.поесть")
     print("4.написать заметку ")
     print("5 .прочитать заметку")
+    print("6 .пойти погулять")
 
     activion=input("напиши номер действия->")
     if activion=="1":
@@ -65,6 +79,11 @@ while True:
         writeNote()   
     elif activion=="5":
         readNotes()
+    elif activion=="6":
+        stroll()
+    else:
+        print("\n ввидите другое число!!! \n")
+    
     
     
     print("\n\n")
