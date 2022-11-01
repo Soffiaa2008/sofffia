@@ -129,8 +129,10 @@ while True:
         stroll()
     else:
         print("\n ввидите другое число")
-    
-    if health>100: health=100
+
+    if health>100:
+         health=100
+         print("я себя чувствую очень хорошо!!!")
     if energy>100: energy=100       
     
     
