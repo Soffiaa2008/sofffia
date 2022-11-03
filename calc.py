@@ -56,6 +56,8 @@ bYmno.place(x=425,y=270,width=50,height=100)
 bDelenie=Button(frame,text="/",font=50)
 bDelenie.place(x=425,y=380,width=50,height=100)
 
+bravno=Button(frame,text="=",font=50)
+bravno.place(x=300,y=425,width=100,height=50)
 
 
 
