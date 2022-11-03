@@ -1,4 +1,5 @@
 from cProfile import label
+from select import select
 from tkinter import *
 
 window=Tk()
@@ -6,6 +7,45 @@ calculater=""
 
 num1=0
 num2=0
+
+selectPlus=False
+selectMinus=False
+selectYmno=False
+selectDelenie=False
+selectravno=False
+
+def mathOperation(mode):
+    global calculater,num1,num2,selectMinus,selectDelenie,selectPlus,selectravno,selectYmno
+    num1=float(calculater)
+    calculater=""
+    label.config(text=calculater)
+    if mode =="+":
+        selectPlus=True 
+    if mode =="-":
+        selectMinus=True
+    if mode =="/":
+        selectDelenie=True 
+    if mode =="*":
+        selectYmno=True
+
+def equals():
+    global calculater,num1,num2,selectMinus,selectDelenie,selectPlus,selectravno,selectYmno
+    num2=calculater
+    num2=float(num2)
+    if selectMinus:
+        calculater=num1-num2
+    elif selectPlus:
+        calculater=num1+num2 
+    elif selectDelenie:
+        calculater=num1/num2 
+    elif selectYmno:
+        calculater=num1*num2 
+
+
+    label.config(text=calculater)
+
+    selectPlus=False
+
 
 buttons=[]
 xb=50
@@ -44,19 +84,19 @@ for i in range(10):
     buttons[i].config(command=lambda i=i:button(i))
 
 
-bPlus=Button(frame,text="+",font=50)
+bPlus=Button(frame,text="+",font=50,command=lambda: mathOperation("+"))
 bPlus.place(x=425,y=50,width=50,height=100)
 
-bMinus=Button(frame,text="-",font=50)
+bMinus=Button(frame,text="-",font=50,command=lambda: mathOperation("-"))
 bMinus.place(x=425,y=160,width=50,height=100)
 
-bYmno=Button(frame,text="*",font=50)
+bYmno=Button(frame,text="*",font=50,command=lambda :mathOperation("*"))
 bYmno.place(x=425,y=270,width=50,height=100)
 
-bDelenie=Button(frame,text="/",font=50)
+bDelenie=Button(frame,text="/",font=50,command=lambda :mathOperation("/"))
 bDelenie.place(x=425,y=380,width=50,height=100)
 
-bravno=Button(frame,text="=",font=50)
+bravno=Button(frame,text="=",font=50,command=equals)
 bravno.place(x=300,y=425,width=100,height=50)
 
 
