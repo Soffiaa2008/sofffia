@@ -146,7 +146,8 @@ while True:
     if health <=0:
         print("игра оконченна:(((")
         break
-    
+    if energy>= 500:
+        print("игра оконченна,ты выйграл!!! еще увидимся:)")
     print("\n\n")
 
 

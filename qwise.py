@@ -36,7 +36,7 @@ while True:
     v2=input("ответ---->")
 
     while True:
-        if v2.lower() =="центральном":
+        if v2.lower() =="центральном" or v2.lower()== "центральный":
             print("это верно")
             scores+=5
             break

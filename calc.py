@@ -2,7 +2,10 @@ from cProfile import label
 from tkinter import *
 
 window=Tk()
-callculater=""
+calculater=""
+
+num1=0
+num2=0
 
 buttons=[]
 xb=50
@@ -19,6 +22,12 @@ frame.place(relx=0.01,rely=0.01,relwidth=0.98,relheight=0.98)
 label=Label(frame,text="0",font=10)
 label.place(x=1,y=1,width=488)
 
+def button(num):
+    global calculater
+    num=str(num)
+    calculater+=num
+    label.config(text=calculater)
+
 
 for i in range(10):
     buttons.append(Button(frame,text=i,font=50))
@@ -30,6 +39,10 @@ for i in range(10):
         if xb>300:
             yb-=125
             xb=50
+
+for i in range(10):
+    buttons[i].config(command=lambda i=i:button(i))
+
 
 bPlus=Button(frame,text="+",font=50)
 bPlus.place(x=425,y=50,width=50,height=100)
