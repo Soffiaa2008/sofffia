@@ -17,9 +17,12 @@ selectravno=False
 
 def mathOperation(mode):
     global calculater,num1,num2,selectMinus,selectDelenie,selectPlus,selectravno,selectYmno
+    if calculater =="":
+        calculater=0
     num1=float(calculater)
     calculater=""
     label.config(text=calculater)
+
     if mode =="+":
         selectPlus=True 
     if mode =="-":
