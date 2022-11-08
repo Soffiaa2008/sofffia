@@ -37,7 +37,11 @@ def equals():
     elif selectPlus:
         calculater=num1+num2 
     elif selectDelenie:
-        calculater=num1/num2 
+        if num2 == 0:
+            label.config(text="на ноль делить нельзя !!!")
+            return
+        else:
+            calculater=num1/num2 
     elif selectYmno:
         calculater=num1*num2 
 
