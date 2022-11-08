@@ -14,6 +14,7 @@ selectYmno=False
 selectDelenie=False
 selectravno=False
 
+
 def mathOperation(mode):
     global calculater,num1,num2,selectMinus,selectDelenie,selectPlus,selectravno,selectYmno
     num1=float(calculater)
@@ -50,6 +51,12 @@ def equals():
 
     selectPlus=False
 
+def clear():
+    global calculater,num1,num2
+    calculater =""
+    num1=0
+    num2=0
+    label.config(text=calculater)
 
 buttons=[]
 xb=50
@@ -103,6 +110,8 @@ bDelenie.place(x=425,y=380,width=50,height=100)
 bravno=Button(frame,text="=",font=50,command=equals)
 bravno.place(x=300,y=425,width=100,height=50)
 
+bclear=Button(frame,text="C",font=50,command=clear)
+bclear.place(x=45,y=425,width=100,height=50)
 
 
 
